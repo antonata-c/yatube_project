@@ -3,8 +3,17 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Главная страница")
+    context = {
+        'text': 'Это главная страница проекта Yatube',
+    }
+    template = 'posts/index.html'
+    return render(request, template, context)
 
 
 def group_posts(request, slug):
-    return HttpResponse("Группы")
+    context = {
+        'text': 'Здесь будет информация о группах проекта Yatube',
+    }
+    template = 'posts/group_list.html'
+    return render(request, template, context)
+
